@@ -17,6 +17,7 @@ signal = np.sin(x_axis)
 # grafovani
 fig, ax = plt.subplots()
 ax.plot(x_axis, signal, 'ro:')
+ax.grid()
 
 # vykreslim interpolaci pro vsechny rady az po order - 1 definovany nahore
 # pocita se od nulteho, proto 4
