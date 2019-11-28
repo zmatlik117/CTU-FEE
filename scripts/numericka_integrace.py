@@ -1,4 +1,5 @@
 from scipy import integrate
+import sympy
 import numpy as np
 
 def func(x):
@@ -26,3 +27,8 @@ result = integrate.simps(vals, x_axis)
 # a vysypu to do konzole - v tomhle pripade tak nejak cekam ze kdyz zintegruju horni pulku
 # sinusovky ze to vyhodi 2
 print(result)
+
+# matematicky presny vysledek. cerna magie. Prostudujte si dokumentaci k modulu sympy
+i, x = sympy.symbols('i, x')
+i = sympy.Integral(sympy.sin(x), (x, 0, sympy.pi))
+print(i.doit())
