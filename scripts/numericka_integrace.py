@@ -2,26 +2,20 @@ from scipy import integrate
 import sympy
 import numpy as np
 
-def func(x):
-    """
-    testovaci funkce
-    """
-    return x**3 + 2 * x**2 - 5 * x - 8
-
-def func2(x):
-    """
-    testovaci funkce
-    """
-    return np.sin(x)
-
-# vyberu si kterou funkci ze chci integrovat
-tested_func = func2
-
 # poridim si osu x
 step = int(1e6)
-x_axis = np.linspace(0, np.pi, step)
+
+# definice mezi - pro numpy a sympy je nutno definovat zvlast
+# zejmena v pripade matematickych konstant!!
+low_np = 0
+low_sp = 0
+
+high_np = np.pi + 1         # todle je cislo spocitane na docela dost desetinnych mist
+high_sp = sympy.pi + 1      # ale todle uz je matematicky presny symbol!!
+
+x_axis = np.linspace(low_np, high_np, step)
 # vycislim funkci
-vals = tested_func(x_axis)
+vals = np.sin(x_axis)
 # pouziju simpsona
 result = integrate.simps(vals, x_axis)
 # a vysypu to do konzole - v tomhle pripade tak nejak cekam ze kdyz zintegruju horni pulku
@@ -30,5 +24,12 @@ print(result)
 
 # matematicky presny vysledek. cerna magie. Prostudujte si dokumentaci k modulu sympy
 i, x = sympy.symbols('i, x')
-i = sympy.Integral(sympy.sin(x), (x, 0, sympy.pi))
-print(i.doit())
+i = sympy.Integral(sympy.sin(x), (x, low_sp, high_sp))
+print("Integral to solve: %s" % i)
+
+integral_solved = i.doit()
+print("analytical solution : %s" % integral_solved)
+integral_evalued = integral_solved.evalf()
+print("floating point evaluation of solution: %s" % integral_evalued)
+error = (integral_evalued - result) / integral_evalued
+print("Error of numerical solution = %s " % error)
