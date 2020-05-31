@@ -1,10 +1,31 @@
+# -*- coding: UTF-8 -*-
 """
 Teplotni zavislost odporu
+
+Puvodne pripraveno na situaci ze se teplota muze v prubehu mereni menit,
+v prubehu mereni jsme od toho upustili.
+
+ZAVER
+-----
+
+TR212 a TR154 se tvari jako rezistory, u nichz je teplotni zavislost parazitnim
+jevem a je zadano aby byla co nejmensi.
+
+NTC 6k8 a 40R maji velmi podobnou teplotni zavislost, ktera naznacuje podobnou
+technologii vyroby. Zavislost neni linearni a pripomina klesajici exponencialu.
+V uzkem rozsahu teplot je vsak mozno zavislost pomerne snadno linearizovat s
+dostatecne malou chybou, pouzitelnou pro technicke ucely.
+
+Krivka pro PT100 naznacuje mocninny charakter -> pro siroke rozsahy teplot nemusi
+postacovat prace pouze s teplotnim koeficientem alpha a muze byt nutne uzit
+vyssi rady. Zalezi na aplikaci a pozadovane presnosti mereni teplot.
+
+PTC60 vykazuje silne exponencialni narust hodnoty rezistance v
+merenem rozsahu teplot. Uziti jako tepelne pojistky/soucast odmagnetovavacich
+obvodu CRT obrazovek neni prekvapive.
 """
 
 from matplotlib import pyplot as plt
-
-# meas = {sample: ([temp, R])}
 
 temps = [22.0, 45, 60, 80, 100, 115]
 meas = {
@@ -23,16 +44,29 @@ meas = {
 
 }
 
+fig = plt.figure()
+gs = fig.add_gridspec(1, 3)
+ax1 = fig.add_subplot(gs[0, 0])
+ax2 = fig.add_subplot(gs[0, 1])
+# spans two rows:
+ax3 = fig.add_subplot(gs[0, 2])
+axes = [ax1, ax2, ax3]
+ylimits = [
+    (98, 102),
+    (0, 200),
+    (0, 10000)
+]
 
-plt.xlabel("Temp[\u00b0C]")
-plt.ylabel("R[% nominal@25\u00b0C]")
-for sensor, char in meas.items():
-    x = char[0]
-    y = char[1]
-    nom = x[0]
-    z = [number * 100 / nom for number in x]
-    plt.plot(y, z, label=str(sensor)+"\u00b0C")
-plt.grid()
-plt.legend()
-plt.ylim(95, 105)
+for axis, (ylimit_lo, ylimit_hi)in zip(axes, ylimits):
+    axis.set_xlabel("Temp[°C]")
+    axis.set_ylabel("R[% nominal@25°C]")
+    for sensor, char in meas.items():
+        ohm = char[0]
+        temp = char[1]
+        nom = ohm[0]  # @25°C
+        ohm_rel = [number * 100 / nom for number in ohm]
+        axis.plot(temp, ohm_rel, label=str(sensor), marker='s')
+    axis.grid()
+    axis.legend(loc='upper left')
+    axis.set_ylim(ylimit_lo, ylimit_hi)
 plt.show()
