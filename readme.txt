@@ -1,6 +1,8 @@
-Shromazdiste ruznych skriptu co demonstruji principy probirane na IAP u Kyncla
+Puvodne shromazdiste ruznych skriptu co demonstruji principy probirane na IAP u Kyncla,
+zvrhlo se to v dokumentaci vseho co se kdy na studiu CVUT FEL nakodilo, pouzilo, odevzdalo, etcetera.
 
-Postupne jak se budu pripravovat na zkousku sem budu hazet vsechno co budu zkouset. Kdyz najdu cas tak to bude mit i nejakou stabni kulturu ale slibit to nedovedu
+Postupne jak se budu pripravovat na zkousku sem budu hazet vsechno co budu zkouset.
+Kdyz najdu cas tak to bude mit i nejakou stabni kulturu ale slibit to nedovedu
 
 Release note Python
 https://www.python.org/downloads/release/python-380/
@@ -36,6 +38,11 @@ nainstalovat nebo vygoogllite.
 V kazdem pripade budete potrebovat doplnek PyDev:
 https://www.pydev.org/manual_101_install.html
 Poradne proctete, je tam step-by-step navod jak na to.
+
+Dalsi vyvojove prostredi je PyCharm od JetBrains:
+https://www.jetbrains.com/pycharm/
+Ja s tim nerad delam a nemam s tim zkusenosti, jen zminuju ze to existuje a ze na to slysim taky
+dobre ohlasy. Jen ode me necekejte podporu protoze s tim sam neumim.
 
 Instalace pythonovskych balicku:
 
