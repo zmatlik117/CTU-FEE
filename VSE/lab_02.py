@@ -44,17 +44,18 @@ meas = {
 
 }
 
-fig = plt.figure()
-gs = fig.add_gridspec(1, 3)
+fig = plt.figure(dpi=200)
+gs = fig.add_gridspec(1, 1)
+# ax1 = fig.add_subplot(gs[0, 0])
+# ax2 = fig.add_subplot(gs[0, 1])
+# ax3 = fig.add_subplot(gs[0, 2])
+# axes = [ax1, ax2, ax3]
 ax1 = fig.add_subplot(gs[0, 0])
-ax2 = fig.add_subplot(gs[0, 1])
-# spans two rows:
-ax3 = fig.add_subplot(gs[0, 2])
-axes = [ax1, ax2, ax3]
+axes = [ax1]
 ylimits = [
-    (98, 102),
-    (0, 200),
-    (0, 10000)
+    # (98, 102),
+    # (0, 200),
+    (0, 8000)
 ]
 
 for axis, (ylimit_lo, ylimit_hi)in zip(axes, ylimits):

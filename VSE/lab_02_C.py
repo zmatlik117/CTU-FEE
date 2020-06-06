@@ -33,7 +33,7 @@ meas = {
                 temps),
     "47nF U2J": ([48.1E-9, 47.4E-9, 46.7E-9, 46E-9, 45.5E-9, 44.98E-9],
                  temps),
-    "100nF Y5B": ([97.54E-9, 99.7E-9, 95.6E-9, 92.1E-9, 89.1E-9, 89.5E-9],
+    "100nF Y5V": ([97.54E-9, 99.7E-9, 95.6E-9, 92.1E-9, 89.1E-9, 89.5E-9],
                   temps),
     "100nF X8R": ([96.2E-9, 99.9E-9, 98.8E-9, 97.3E-9, 97.3E-9, 100E-9],
                   temps),
@@ -46,7 +46,7 @@ meas = {
 
 }
 
-fig = plt.figure()
+fig = plt.figure(dpi=200)
 ax = fig.add_subplot()
 
 ax.set_xlabel("Temp[°C]")
