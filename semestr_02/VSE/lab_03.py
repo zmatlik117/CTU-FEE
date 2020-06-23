@@ -13,7 +13,7 @@ def graf_time(t, u, i, dt, dv, di, title):
     t_ax = [time * dt for time in t]
     i_ax = [curr * di for curr in i]
     v_ax = [volt * dv for volt in u]
-    fig = plt.figure()
+    fig = plt.figure(dpi=100)
     ax = fig.add_subplot()
     ax.set_xlabel("t[S]")
     ax.set_ylabel("")
@@ -45,7 +45,7 @@ def graf_xy_soar(u, i, dv, di, ic, uce, pmax, p_u, u_p, title):
                 soar_reduced[idx] = i_pm[idx]
             else:
                 soar_reduced[idx] = i_pm_reduced[idx]
-    fig = plt.figure()
+    fig = plt.figure(dpi=100)
     ax = fig.add_subplot()
     ax.set_xlabel("Uce[V]")
     ax.set_ylabel("Ic[A]")
@@ -65,7 +65,7 @@ p_u = 65  # W
 u_p = 30  # V
 
 # resistive load
-title = 'R zatez'
+title = 'L zatez s diodovou kompenzaci'
 r_t_div = 200E-6
 r_v_div = 50  # V/div
 r_i_div = 1  # 1A/1V
@@ -80,7 +80,7 @@ graf_xy_soar(
     title)
 
 # RL load
-title = 'RL bez kompenzace'
+title = 'L bez kompenzace'
 rl_t_div = 200E-6
 rl_v_div = 50  # V/div
 rl_i_div = 1  # 1A/1V
@@ -95,7 +95,7 @@ graf_xy_soar(
     title)
 
 # RL load with diode
-title = 'RL + dioda'
+title = 'L s kompenzaci R'
 rld_t_div = 200E-6
 rld_v_div = 50  # V/div
 rld_i_div = 1  # 1A/1V
