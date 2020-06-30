@@ -44,30 +44,24 @@ meas = {
 
 }
 
-fig = plt.figure(dpi=200)
-gs = fig.add_gridspec(1, 1)
-# ax1 = fig.add_subplot(gs[0, 0])
-# ax2 = fig.add_subplot(gs[0, 1])
-# ax3 = fig.add_subplot(gs[0, 2])
-# axes = [ax1, ax2, ax3]
-ax1 = fig.add_subplot(gs[0, 0])
-axes = [ax1]
 ylimits = [
-    # (98, 102),
-    # (0, 200),
-    (0, 8000)
+    (98, 102, 'linear'),
+    (50, 150, 'linear'),
+    (1, 10000, 'log')
 ]
 
-for axis, (ylimit_lo, ylimit_hi)in zip(axes, ylimits):
-    axis.set_xlabel("Temp[°C]")
-    axis.set_ylabel("R[% nominal@25°C]")
+for ylimit_lo, ylimit_hi, scale in ylimits:
+    plt.figure(dpi=200)
+    plt.xlabel("Temp[°C]")
+    plt.ylabel("R[% nominal@25°C]")
     for sensor, char in meas.items():
         ohm = char[0]
         temp = char[1]
         nom = ohm[0]  # @25°C
         ohm_rel = [number * 100 / nom for number in ohm]
-        axis.plot(temp, ohm_rel, label=str(sensor), marker='s')
-    axis.grid()
-    axis.legend(loc='upper left')
-    axis.set_ylim(ylimit_lo, ylimit_hi)
+        plt.plot(temp, ohm_rel, label=str(sensor), marker='s')
+    plt.grid(True, 'both')
+    plt.yscale(scale)
+    plt.legend(loc='upper left')
+    plt.ylim(ylimit_lo, ylimit_hi)
 plt.show()
