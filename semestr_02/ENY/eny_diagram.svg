@@ -40,9 +40,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.0610557"
-     inkscape:cx="317.34907"
-     inkscape:cy="622.02224"
+     inkscape:zoom="0.75027968"
+     inkscape:cx="292.57429"
+     inkscape:cy="551.24295"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -65,7 +65,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -171,11 +171,11 @@
        y="107.14192"
        id="text934"><tspan
          sodipodi:role="line"
-         id="tspan1177">250MVA</tspan><tspan
+         id="tspan939">250MVA</tspan><tspan
          sodipodi:role="line"
-         id="tspan1179">400/13,75kV</tspan><tspan
+         id="tspan941">400/13,75kV</tspan><tspan
          sodipodi:role="line"
-         id="tspan1181">uk=12%</tspan></text>
+         id="tspan943">uk=14%</tspan></text>
     <ellipse
        style="fill:#000000;stroke:#000000;stroke-width:0.203676;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:normal"
        id="path974"
@@ -390,11 +390,11 @@
        y="253.14192"
        id="text934-3"><tspan
          sodipodi:role="line"
-         id="tspan1291">10MVA</tspan><tspan
+         id="tspan945">10MVA</tspan><tspan
          sodipodi:role="line"
-         id="tspan1293">10kV</tspan><tspan
+         id="tspan947">10kV</tspan><tspan
          sodipodi:role="line"
-         id="tspan1295">Iz=5</tspan></text>
+         id="tspan949">Iz=4.5</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583;-inkscape-font-specification:'sans-serif, Normal';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;"
@@ -402,11 +402,11 @@
        y="191.14192"
        id="text934-4"><tspan
          sodipodi:role="line"
-         id="tspan1285">20MVA</tspan><tspan
+         id="tspan951">20MVA</tspan><tspan
          sodipodi:role="line"
-         id="tspan1287">13,75/10kV</tspan><tspan
+         id="tspan953">13,75/10kV</tspan><tspan
          sodipodi:role="line"
-         id="tspan1289">uk=12%</tspan></text>
+         id="tspan955">uk=10%</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583;"
@@ -414,11 +414,11 @@
        y="107.14192"
        id="text934-4-8"><tspan
          sodipodi:role="line"
-         id="tspan1297">20MVA</tspan><tspan
+         id="tspan957">20MVA</tspan><tspan
          sodipodi:role="line"
-         id="tspan1299">110/10kV</tspan><tspan
+         id="tspan959">110/10kV</tspan><tspan
          sodipodi:role="line"
-         id="tspan1301">uk=12%</tspan></text>
+         id="tspan961">uk=10%</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 133,48.996699 h 26"
